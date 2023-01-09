@@ -12,7 +12,7 @@ class Service(models.Model):
     resume = models.FileField(upload_to='polls/files',default="")
 
     def __str__(self):
-        return self.role
+        return f'{self.sno} : {self.role}'
 
 class Skill(models.Model):
     sno = models.AutoField(primary_key=True)
@@ -20,7 +20,7 @@ class Skill(models.Model):
     width=models.CharField(max_length=111)
 
     def __str__(self):
-        return self.name
+        return f'{self.sno} : {self.name}'
 
 class Project(models.Model):
     sno = models.AutoField(primary_key=True)
@@ -29,16 +29,16 @@ class Project(models.Model):
     domain = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.name
+        return f'{self.sno} : {self.name}'
 
 
 class Message(models.Model):
     sno = models.AutoField(primary_key=True)
-    email = models.CharField(max_length=200)
     name = models.CharField(max_length=111)
+    email = models.CharField(max_length=200)
     subject = models.CharField(max_length=500)
     message = models.TextField()
 
-    def __str__(self) -> str:
-        return self.email
+    def __str__(self):
+        return f'{self.sno} : {self.email}'
 
