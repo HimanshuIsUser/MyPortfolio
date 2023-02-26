@@ -1,7 +1,6 @@
 from distutils.command.upload import upload
 import email
 from email.policy import default
-from turtle import width
 from django.db import models
 
 # Create your models here.
